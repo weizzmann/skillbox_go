@@ -1,0 +1,38 @@
+Дополнительное задание 12 модуля:
+
+https://replit.com/@weizzmann1/SmartDazzlingCodeview#task12dop.go
+
+Вопросы: 
+
+1. В каких случаях какой вариант лучше использовать?
+
+Обычно лучше использовать ioutil.ReadAll() и ioutil.WriteFile()?
+
+C более крупными файлами лучше использовать метод из дополнительного задания т.к потребляется намного меньше памяти, чем при загрузке сразу всего файла?
+
+2. "а так же научитесь прерывать запись в файл с помощью EOF." -  Вы наверное имели ввиду чтение?
+
+То что реализовано в решение дополнительного задания?
+
+3. Вызывать file.Sync() нужно только при записи в файл?
+
+file, err := os.Create("file.txt")
+if err != nil {      
+    fmt.Println(err)
+    return  
+}defer 
+file.Close()  
+file.WriteString(fmt.Sprintf("hello world"))
+file.Sync()
+Каждый раз при записи в файл или один раз?
+
+file.WriteString(fmt.Sprintf("hello world"))
+file.Sync()
+file.WriteString(fmt.Sprintf("hello world"))
+file.Sync() 
+или 
+
+file.WriteString(fmt.Sprintf("hello world"))
+file.WriteString(fmt.Sprintf("hello world"))
+file.WriteString(fmt.Sprintf("hello world"))
+file.Sync()
