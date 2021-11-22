@@ -36,3 +36,6 @@ file.WriteString(fmt.Sprintf("hello world"))
 file.WriteString(fmt.Sprintf("hello world"))
 file.WriteString(fmt.Sprintf("hello world"))
 file.Sync()
+
+
+wwww
